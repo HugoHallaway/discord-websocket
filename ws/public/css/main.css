@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+body {
+    background-color: rgb(30, 30, 30)
+}
+
+p, h1, h2, h3, h4, h5, h6, a, table, tr, td, th, li {
+    font-family: 'Roboto', sans-serif;
+    color: white;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 60px;
+    width: 300px;
+}
+
+.select { 
+    position: relative;
+    display: flex;
+    line-height: 3;
+    height: 28px;
+    background: white;
+    overflow: hidden;
+    border-radius: 12px;
+    margin-bottom: 24px;
+}
+
+.select::after {
+    content: '\25BC';
+    font-size: 11px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 1em;
+    background: white;
+    cursor: pointer;
+    pointer-events: none;
+    -webkit-transition: .25s all ease;
+    -o-transition: .25s all ease;
+    transition: .25s all ease;
+  }
+
+  .select:hover::after {
+    color: #f39c12;
+  }
+
+.slct {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    outline: 0;
+    box-shadow: none;
+    background: white;
+    flex: 1;
+    padding: 0 .5em;
+    cursor: pointer;
+}
+
+.text {
+    height: 60px;
+    margin-bottom: 24px;
+    border-radius: 12px;
+    border: 1px solid grey;
+    padding: 12px 6px;
+}
+
+.button {
+    width: 100px;
+    border-radius: 12px;
+    border: 1px solid grey;
+    background-color: '#FFFFFF';
+    align-self: flex-end;
+}
