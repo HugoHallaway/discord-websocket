@@ -27,11 +27,15 @@ $ git clone https://github.com/zekroTutorials/DiscordWebsocket.git .
 $ npm install
 ```
 
-Then, enter your data in the `config.json`.
+Then, enter your data in the `config.json`. The token of your BOT, and a personal token for the browser access.
 
 Now, you can start with
 ```
 $ npm test
+```
+or
+```
+$ node main.js
 ```
 
 ## Connection on the web
