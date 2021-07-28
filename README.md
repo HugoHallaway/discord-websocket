@@ -40,4 +40,4 @@ Open your browser and follow this link :
 ```
 localhost:5665/?token=123456
 ```
-Replace '123456' by your token, that you have defined in [**config.json**](BASEDIR=$(dirname "$config.json"))
+Replace '123456' by your token, that you have defined in [**config.json**](config.json"))
