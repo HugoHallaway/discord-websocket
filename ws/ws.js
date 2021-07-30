@@ -2,6 +2,7 @@ const express = require('express')
 const hbs = require('express-handlebars')
 const bodyParser = require("body-parser");
 const path = require('path')
+const serveFavicon = require('serve-favicon');
 
 /**
  * Websocket class.
@@ -34,6 +35,8 @@ class WebSocket {
         this.app.use(bodyParser.json());
 
         this.registerRoots()
+
+        this.app.use(serveFavicon(path.join(__dirname, 'public', 'images', 'favicon.ico')))
 
         // Start websocket on port defined in constructors arguments
         this.server = this.app.listen(port, () => {
@@ -69,35 +72,57 @@ class WebSocket {
             this.client.guilds.first().channels
                 .filter(c => c.type == 'text')
                 .forEach(c => {
-                    chans.push({id: c.id, name: c.name})
+                    chans.push({ id: c.id, name: c.name })
                 })
-    
+
             // Render index view and pass title, token
             // and channels array
-            res.render('index', { 
-                title: "SECRET INTERFACE", 
-                token: _token, 
-                chans 
+            res.render('index', {
+                title: "SECRET INTERFACE",
+                token: _token,
+                chans
             })
         })
-    
+
         this.app.post('/sendMessage', (req, res) => {
             var _token = req.body.token
             var channelid = req.body.channelid
             var text = req.body.text
 
-            if(!_token || !channelid || !text)
+            if (!_token || !channelid || !text)
                 return res.sendStatus(400);
-    
+
             if (!this.checkToken(_token))
                 return res.sendStatus(401)
-    
+
             var chan = this.client.guilds.first().channels.get(channelid)
-    
+
             // catch post request and if token passes,
             // send message into selected channel
             if (chan) {
                 chan.send(text)
+                res.sendStatus(200)
+            } else
+                res.sendStatus(406)
+        })
+
+        this.app.post('/sendMessageTest', (req, res) => {
+            var _token = req.body.token
+            var channelid = req.body.channelid
+            var text = req.body.text
+
+            if (!_token || !channelid)
+                return res.sendStatus(400);
+
+            if (!this.checkToken(_token))
+                return res.sendStatus(401)
+
+            var chan = this.client.guilds.first().channels.get(channelid)
+
+            // catch post request and if token passes,
+            // send message into selected channel
+            if (chan) {
+                chan.send("Test validé <a:nyancat:526823064692981781> BOT prêt.")
                 res.sendStatus(200)
             } else
                 res.sendStatus(406)

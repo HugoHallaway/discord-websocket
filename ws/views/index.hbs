@@ -1,23 +1,91 @@
-{{!-- 
-    Invisible dummy frame to redirect response answer 
-    to this to don't reload the page after request.
---}}
+{{!-- Invisible dummy frame to redirect response answer to this to don't reload the page after request. --}}
 <iframe style="display: none" name="dummyframe" id="dummyframe"></iframe>
 
-<form class="form" action="/sendMessage" method="POST" target="dummyframe" >
-    {{!-- Pass token back to authenticate web request --}}
-    <input type="hidden" name="token" value="{{ token }}" />
-    {{!-- Channel selector --}}
-    <div class="select">
-    <select class="slct" name="channelid">
-        <option selected disabled>Sélectionner un channel</option>
-        {{#each chans}}
-            <option value="{{this.id}}">{{this.name}}</option>
-        {{/each}}
-    </select>
-    </div>
-    {{!-- Message text input --}}
-    <textarea class="text" name="text" placeholder="Texte"></textarea>
-    {{!-- Send button --}}
-    <input type="submit" class="button" value="Envoyer">
-</form>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<!--===============================================================================================-->
+</head>
+
+<body>
+	<form class="form" action="/sendMessage" method="POST" target="dummyframe">
+		{{!-- Pass token back to authenticate web request --}}
+		<input type="hidden" name="token" value="{{ token }}" />
+
+		<div class="container-contact100">
+			<div class="wrap-contact100">
+				{{!-- Title --}}
+				<span class="contact100-form-title">
+					Bienvenue sur l'interface de contrôle du BOT !
+				</span>
+				{{!-- 1st box, select channel --}}
+				<div class="wrap-input100 input100-select">
+					<span class="label-input100">Sélectionner un channel</span>
+					{{!-- Channel selector --}}
+					<div class="select">
+						<select class="selection-2" name="channelid">
+							<option selected disabled>Sélectionner un channel</option>
+							{{#each chans}}
+							<option value="{{this.id}}">{{this.name}}</option>
+							{{/each}}
+						</select>
+					</div>
+					<span class="focus-input100"></span>
+				</div>
+				{{!-- 2nd box, Text input --}}
+				<div class="wrap-input100 validate-input" data-validate="Message is required">
+					<span class="label-input100">Message</span>
+					{{!-- Message text input --}}
+					<textarea class="input100" name="text" placeholder="Écrivez votre message ici...."></textarea>
+					<span class="focus-input100"></span>
+				</div>
+				{{!-- 3rd box, validate button --}}
+				<div class="container-contact100-form-btn">
+					<div class="wrap-contact100-form-btn">
+						<div class="contact100-form-bgbtn"></div>
+						<button class="contact100-form-btn" type="submit">
+							<span>
+								Valider
+								<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+							</span>
+						</button>
+					</div>
+				</div>
+				{{!-- Optionnal : Test button --}}
+				<div class="container-contact100-form-btn">
+					<div class="wrap-contact100-form-btn">
+						<div class="contact100-form-bgbtn"></div>
+						<button class="contact100-form-btn" type="submit">
+							<span>
+								Test
+								<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+							</span>
+						</button>
+					</div>
+				</div>
+				{{!-- END of Optionnal Button --}}
+			</div>
+		</div>
+		</div>
+	</form>
+	{{!-- Select channel (Don't delete) --}}
+	<div id="dropDownSelect1"></div>
+
+	<!--===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+	<script>
+		$(".selection-2").select2({
+			minimumResultsForSearch: 20,
+			dropdownParent: $('#dropDownSelect1')
+		});
+	</script>
+</body>
