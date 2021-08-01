@@ -16,6 +16,7 @@ var ws = new WS(config.ws.token, config.ws.port, client)
 // If the bot is ready, this event will be fired
 client.on('ready', () => {
     console.log(`Connected as ${client.user.tag}`)
+    console.log(`Profil picture of your BOT \"${client.user.avatarURL}\"`)
 })
 
 // Logging in Discord Bot at the API

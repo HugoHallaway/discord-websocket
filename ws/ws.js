@@ -78,7 +78,7 @@ class WebSocket {
             // Render index view and pass title, token
             // and channels array
             res.render('index', {
-                title: "SECRET INTERFACE",
+                title: this.client.user.tag,
                 token: _token,
                 chans
             })
@@ -109,7 +109,6 @@ class WebSocket {
         this.app.post('/sendMessageTest', (req, res) => {
             var _token = req.body.token
             var channelid = req.body.channelid
-            var text = req.body.text
 
             if (!_token || !channelid)
                 return res.sendStatus(400);
