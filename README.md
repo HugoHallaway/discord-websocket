@@ -1,7 +1,7 @@
 # DiscordWebsocketTutorial
 
 ### Original Repository
-[**Original Repository :**](https://github.com/zekroTutorials/DiscordWebsocket.git) zekroTutorial (Archived)
+[**Original Repository :**](https://github.com/zekroTutorials/DiscordWebsocket.git) zekroTutorial (Archived)  
 👉 [**VIDEO of the Owner (German)**](https://youtu.be/LxLob6-8Sl0)
 
 ---
