@@ -1,8 +1,8 @@
 # DiscordWebsocketTutorial
 
-## Video
-
-👉 [**VIDEO (German)**](https://youtu.be/LxLob6-8Sl0)
+### Original Repository
+👉 [**Original Repository :**](https://github.com/zekroTutorials/DiscordWebsocket.git) zekroTutorial (Archived)  
+👉 [**VIDEO of the Owner (German)**](https://youtu.be/LxLob6-8Sl0)
 
 ---
 
@@ -23,12 +23,13 @@ $ npm install discord.js express express-handlebars body-parser
 
 Get the repository and set up with:
 ```
-$ git clone https://github.com/zekroTutorials/DiscordWebsocket.git .
+$ git clone https://github.com/HugoHallaway/discord-websocket.git .
 $ npm install
 ```
+---
+> Then, enter your data in the `config.json`. The token of your BOT, and a personal token for the browser access.
 
-Then, enter your data in the `config.json`. The token of your BOT, and a personal token for the browser access.
-
+---
 Now, you can start with
 ```
 $ npm test
@@ -45,3 +46,5 @@ Open your browser and follow this link :
 localhost:5665/?token=123456
 ```
 Replace '123456' by your token, that you have defined in [**config.json**](config.json)
+
+![Web page](https://i.imgur.com/WFsHkHA.png)
