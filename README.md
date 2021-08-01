@@ -1,7 +1,9 @@
 # DiscordWebsocketTutorial
 
+![Web page](https://i.imgur.com/WFsHkHA.png)
+
 ### Original Repository
-[**Original Repository :**](https://github.com/zekroTutorials/DiscordWebsocket.git) zekroTutorial (Archived)  
+👉 [**Original Repository :**](https://github.com/zekroTutorials/DiscordWebsocket.git) zekroTutorial (Archived)  
 👉 [**VIDEO of the Owner (German)**](https://youtu.be/LxLob6-8Sl0)
 
 ---
@@ -27,7 +29,7 @@ $ git clone https://github.com/HugoHallaway/discord-websocket.git .
 $ npm install
 ```
 ---
-Then, enter your data in the `config.json`. The token of your BOT, and a personal token for the browser access.
+> Then, enter your data in the `config.json`. The token of your BOT, and a personal token for the browser access.
 
 ---
 Now, you can start with
