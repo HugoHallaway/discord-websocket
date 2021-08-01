@@ -1,8 +1,10 @@
 # DiscordWebsocketTutorial
 
+[**Original Repository :**] (https://github.com/zekroTutorials/DiscordWebsocket.git)
+
 ## Video
 
-👉 [**VIDEO (German)**](https://youtu.be/LxLob6-8Sl0)
+👉 [**VIDEO of the Owner (German)**](https://youtu.be/LxLob6-8Sl0)
 
 ---
 
@@ -23,7 +25,7 @@ $ npm install discord.js express express-handlebars body-parser
 
 Get the repository and set up with:
 ```
-$ git clone https://github.com/zekroTutorials/DiscordWebsocket.git .
+$ git clone https://github.com/HugoHallaway/discord-websocket.git .
 $ npm install
 ```
 
