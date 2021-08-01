@@ -121,7 +121,7 @@ class WebSocket {
             // catch post request and if token passes,
             // send message into selected channel
             if (chan) {
-                chan.send("Test validé <a:nyancat:526823064692981781> BOT prêt.")
+                chan.send("**Test validé ✓** - BOT prêt.")
                 res.sendStatus(200)
             } else
                 res.sendStatus(406)
