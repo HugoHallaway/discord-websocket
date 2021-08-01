@@ -15,6 +15,9 @@ var ws = new WS(config.ws.token, config.ws.port, client)
 
 // If the bot is ready, this event will be fired
 client.on('ready', () => {
+    client.user.setStatus('dnd')   // Nothing (delete it)= Online, `idle`= Idle (Inactive(), `dnd`= Do not disturb
+    client.user.setActivity(config.status, { type: 'WATCHING' })
+        .then(presence => console.log(`Activity set to \"${config.status}\"`))
     console.log(`Connected as ${client.user.tag}`)
     console.log(`Profil picture of your BOT \"${client.user.avatarURL}\"`)
 })
