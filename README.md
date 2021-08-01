@@ -28,8 +28,9 @@ Get the repository and set up with:
 $ git clone https://github.com/HugoHallaway/discord-websocket.git .
 $ npm install
 ```
-
+---
 Then, enter your data in the `config.json`. The token of your BOT, and a personal token for the browser access.
+---
 
 Now, you can start with
 ```
