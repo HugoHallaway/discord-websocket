@@ -19,7 +19,7 @@ class WebSocket {
         this.app = express()
 
         // Register Handlebars instance as view engine
-        this.app.engine('hbs', hbs({
+        this.app.engine('hbs', hbs({            //add '.engine' after 'hbs({' if you have error like "hbs is not a function
             extname: 'hbs',                     // Extension (*.hbs Files)
             defaultLayout: 'layout',            // Main layout -> layouts/layout.hbs
             layoutsDir: __dirname + '/layouts'  // Layouts directory -> layouts/
